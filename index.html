@@ -1,17 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Master</title>
+    <title>Word Slinger</title>
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" /> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 <body>
- 
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="display-1">Word Slinger</h1>
+        </div>
+    </div>   
+    <div class="row">
+           <div class="col-md-6 game">
+               <h2 id="tryAgain">Try Again!</h2>
+           </div>
+           <div class="col-md-6 game">
+               <h2>Press any key to get started</h2>
+               <h4>Wins:</h4>
+               <h5 id="wins"></h5>
+               <h4>Current Word</h4>
+               <h3 id="currentWord"></h3>
+               <h4>Number of Guesses Remaining:</h4>
+               <h6 id="guesses"></h6>
+               <h4>Letters Already Guessed</h4>
+               <h3 id="letters"></h3>
+           </div>
+       </div>
+   </div> 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
