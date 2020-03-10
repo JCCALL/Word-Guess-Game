@@ -1,9 +1,5 @@
-var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-if(!isChrome){
-    $('#iframeAudio').remove();
-} else {
-    $('#playAudio').remove();
-} //trying to get background audio to play in chrome, still no success
+
+
 
 var words = [
     "horse",
@@ -70,14 +66,18 @@ function display() {
         finished = true;
     }
 };
+var audio = document.getElementById("playAudio");
 
 document.onkeydown = function(event) {
     if(finished) {
         reset();
         finished = false;
+        audio.play();
+
     } else {
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toLowerCase());
+            audio.play();
         }
     }
 };
