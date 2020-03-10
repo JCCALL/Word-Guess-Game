@@ -46,6 +46,8 @@ function reset() {
     }
 
     document.getElementById("tryAgain").style.cssText = "display: none";
+    document.getElementById("youLose").style.cssText = "display: none";
+    document.getElementById("youWin").style.cssText = "display: none";
 
     display();
 
@@ -62,7 +64,34 @@ function display() {
     document.getElementById("letters").innerText = guessedLetters;
     if(remaingingGuesses <= 0) {
         document.getElementById("youLose").style.cssText = "display: block";
-        document.getElementById("youWin").style.cssText = "display: block":
+        document.getElementById("tryAgain").style.cssText = "display: block";
         finished = true;
     }
 };
+
+document.onkeydown = function(event) {
+    if(finished) {
+        reset();
+        finished = false;
+    } else {
+        if(event.keyCode >= 65 && event.keyCode <= 90) {
+            makeGuess(event.key.toLowerCase());
+        }
+    }
+};
+
+function makeGuess(letter) {
+    if (remainingGuesses > 0) {
+        if(!started) {
+            started = true;
+        }
+        if (guessedLetters.indexOf(letter) === -1) {
+            guessedLetters.push(letter);
+            evaluateGuess(letter);
+        }
+    }
+    display();
+    checkWin();
+};
+
+
