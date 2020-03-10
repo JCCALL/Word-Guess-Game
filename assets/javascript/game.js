@@ -25,7 +25,7 @@ var words = [
 const attempts = 10
 
 var guessedLetters = [];
-var currentWord;
+var currentWordId;
 var guessingWord = [];
 var remainingGuesses = 0;
 var started = false;
@@ -36,7 +36,7 @@ function reset() {
     remaingingGuesses = attempts;
     started = false;
 
-    currentWord = Math.floor(Math.random() * (selectableWords.length));
+    currentWordId = Math.floor(Math.random() * (selectableWords.length));
 
     guessedLetters = [];
     guessingWord = [];
@@ -51,3 +51,13 @@ function reset() {
 
 };
 
+function display() {
+
+    document.getElementById("allWins").innerText = wins;
+    document.getElementById("currentWord").innerText = "";
+    for (var i = 0; i < guessingWord.length; i++) {
+        document.getElementById("currentWord").innerText += guessingWord[i];
+    }
+    document.getElementById("guesses").innerText = remaingingGuesses;
+    document.getElementById()
+}
