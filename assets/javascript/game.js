@@ -6,20 +6,22 @@ if(!isChrome){
 } //trying to get background audio to play in chrome, still no success
 
 var words = [
-    "clint eastwood",
-    "john wayne",
     "horse",
     "cowboy",
     "lasso",
     "saddle",
-    "six shooter",
+    "sixshooter",
     "tombstone",
-    "wyatt earp",
+    "westworld",
     "sheriff",
     "cattle",
     "gunslinger",
     "ranch",
-    "rodeo"
+    "rodeo",
+    "roundup",
+    "shotgun",
+    "clint",
+    "duke"
 ];
 
 const attempts = 10
@@ -33,15 +35,15 @@ var finished = false;
 var wins = 0;
 
 function reset() {
-    remaingingGuesses = attempts;
+    remainingGuesses = attempts;
     started = false;
 
-    currentWordId = Math.floor(Math.random() * (selectableWords.length));
+    currentWordId = Math.floor(Math.random() * (words.length));
 
     guessedLetters = [];
     guessingWord = [];
 
-    for (var i = 0; i < words[currentWord].length; i++) {
+    for (var i = 0; i < words[currentWordId].length; i++) {
         guessingWord.push("_");
     }
 
@@ -60,9 +62,9 @@ function display() {
     for (var i = 0; i < guessingWord.length; i++) {
         document.getElementById("currentWord").innerText += guessingWord[i];
     }
-    document.getElementById("guesses").innerText = remaingingGuesses;
+    document.getElementById("guesses").innerText = remainingGuesses;
     document.getElementById("letters").innerText = guessedLetters;
-    if(remaingingGuesses <= 0) {
+    if(remainingGuesses <= 0) {
         document.getElementById("youLose").style.cssText = "display: block";
         document.getElementById("tryAgain").style.cssText = "display: block";
         finished = true;
@@ -94,4 +96,27 @@ function makeGuess(letter) {
     checkWin();
 };
 
+function evaluateGuess(letter) {
+    var x = [];
+    for (var i = 0; i < words[currentWordId].length; i++){
+        if(words[currentWordId][i] === letter) {
+            x.push(i);
+        }
+    }
+    if(x.length <= 0) {
+        remainingGuesses--;
+    } else {
+        for (var i = 0; i < x.length; i++) {
+            guessingWord[x[i]] = letter;
+        }
+    }
+};
 
+function checkWin() {
+    if(guessingWord.indexOf("_") === -1) {
+        document.getElementById("youWin").style.cssText = "display: block";
+        document.getElementById("tryAgain").style.cssText = "display: block";
+        wins++
+        finished = true;
+    }
+};
