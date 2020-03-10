@@ -59,5 +59,10 @@ function display() {
         document.getElementById("currentWord").innerText += guessingWord[i];
     }
     document.getElementById("guesses").innerText = remaingingGuesses;
-    document.getElementById()
-}
+    document.getElementById("letters").innerText = guessedLetters;
+    if(remaingingGuesses <= 0) {
+        document.getElementById("youLose").style.cssText = "display: block";
+        document.getElementById("youWin").style.cssText = "display: block":
+        finished = true;
+    }
+};
