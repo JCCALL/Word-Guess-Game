@@ -81,7 +81,12 @@ document.onkeydown = function(event) {
         }
     }
 };
-
+function pauseAudio(){
+    audio.pause();
+}
+function playAudio(){
+    audio.play();
+}
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
         if(!started) {

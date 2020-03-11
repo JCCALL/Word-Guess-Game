@@ -23,7 +23,7 @@ h4,h5,h6 {
 }
 
 #currentWord {
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
 
 #tryAgain, #youLose, #youWin { 
