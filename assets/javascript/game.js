@@ -28,7 +28,7 @@ var guessingWord = [];
 var remainingGuesses = 0;
 var started = false;
 var finished = false;
-var wins = 0;
+var wins = -1;
 
 function reset() {
     remainingGuesses = attempts;
