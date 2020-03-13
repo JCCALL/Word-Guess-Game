@@ -24,7 +24,7 @@ const attempts = 10
 
 var guessedLetters = [];
 var currentWordId;
-var guessingWord = [];
+var guessingWord = ["_"];
 var remainingGuesses = 0;
 var started = false;
 var finished = false;
