@@ -48,7 +48,7 @@ function reset() {
     document.getElementById("youWin").style.cssText = "display: none";
 
     display();
-
+    audio.play();
 };
 
 function display() {
@@ -72,12 +72,12 @@ document.onkeydown = function(event) {
     if(finished) {
         reset();
         finished = false;
-        audio.play();
+        
 
     } else {
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toLowerCase());
-            audio.play();
+            
         }
     }
 };
