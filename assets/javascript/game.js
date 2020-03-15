@@ -1,6 +1,3 @@
-
-
-
 var words = [
     "horse",
     "cowboy",
@@ -18,6 +15,7 @@ var words = [
     "shotgun",
     "clint",
     "duke"
+    
 ];
 
 const attempts = 10
@@ -28,7 +26,11 @@ var guessingWord = ["_"];
 var remainingGuesses = 0;
 var started = false;
 var finished = false;
-var wins = -1;
+var wins = 0;
+var audio = document.getElementById("playAudio");
+var hasInteracted = 0;
+
+reset();
 
 function reset() {
     remainingGuesses = attempts;
@@ -46,9 +48,10 @@ function reset() {
     document.getElementById("tryAgain").style.cssText = "display: none";
     document.getElementById("youLose").style.cssText = "display: none";
     document.getElementById("youWin").style.cssText = "display: none";
+    document.getElementById("winner").style.cssText = "display: none";
 
     display();
-    audio.play();
+
 };
 
 function display() {
@@ -66,9 +69,14 @@ function display() {
         finished = true;
     }
 };
-var audio = document.getElementById("playAudio");
 
 document.onkeydown = function(event) {
+    
+    if(hasInteracted === 0){
+        audio.play();
+        hasInteracted = 1;
+    }
+    
     if(finished) {
         reset();
         finished = false;
@@ -81,12 +89,15 @@ document.onkeydown = function(event) {
         }
     }
 };
+
 function pauseAudio(){
     audio.pause();
 }
+
 function playAudio(){
     audio.play();
 }
+
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
         if(!started) {
@@ -120,7 +131,7 @@ function evaluateGuess(letter) {
 function checkWin() {
     if(guessingWord.indexOf("_") === -1) {
         document.getElementById("youWin").style.cssText = "display: block";
-        document.getElementById("tryAgain").style.cssText = "display: block";
+        document.getElementById("winner").style.cssText = "display: block";
         wins++
         finished = true;
     }

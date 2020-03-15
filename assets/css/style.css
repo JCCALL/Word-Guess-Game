@@ -26,12 +26,14 @@ h4,h5,h6 {
     letter-spacing: 5px;
 }
 
-#tryAgain, #youLose, #youWin { 
+#tryAgain, #youLose, #youWin, #winner { 
     display: none;
+    text-align: center;
 }
 img {
     height: auto;
     width: auto;
+    margin: auto;
 }
 .game {
     padding-top: 20px;
@@ -40,4 +42,6 @@ img {
     margin: 20px 0px;
     min-height: 500px;
     background-color: rgba(255, 255, 255, .5);
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 3px;
 }

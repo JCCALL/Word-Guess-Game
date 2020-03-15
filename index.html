@@ -10,44 +10,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 <body>
-   <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="display-1">Word Slinger</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="display-1">Word Slinger</h1>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-md-6 game">
+                <img id="youWin" src="assets/images/clint.jpg" alt="Winner"/>
+                <img id="youLose" src="assets/images/rope-hanging-loop-noose-with-hangmans-knot-vector-17451738.jpg" alt="Lost"/>   
+                <h2 id="tryAgain">Try Again!</h2>
+                <h2 id="winner">You Win!</h2>
+            </div>
+            <div class="col-md-6 game">
+                <h2>Press any key to get started</h2>
+                <h4>Wins:</h4>
+                <h5 id="allWins"></h5>
+                <h4>Current Word</h4>
+                <h3 id="currentWord"></h3>
+                <h4>Number of Guesses Remaining:</h4>
+                <h6 id="guesses"></h6>
+                <h4>Letters Already Guessed</h4>
+                <h3 id="letters"></h3>
+            </div>
         </div>
-    </div>   
+    </div> 
     <div class="row">
-           <div class="col-md-6 game">
-            <img id="youWin" src="assets/images/clint.jpg" alt="Winner"/>
-            <img id="youLose" src="assets/images/rope-hanging-loop-noose-with-hangmans-knot-vector-17451738.jpg" alt="Lost"/>   
-            <h2 id="tryAgain">Try Again!</h2>
-           </div>
-           <div class="col-md-6 game">
-               <h2>Press any key to get started</h2>
-               <h4>Wins:</h4>
-               <h5 id="allWins"></h5>
-               <h4>Current Word</h4>
-               <h3 id="currentWord"></h3>
-               <h4>Number of Guesses Remaining:</h4>
-               <h6 id="guesses"></h6>
-               <h4>Letters Already Guessed</h4>
-               <h3 id="letters"></h3>
-           </div>
-       </div>
-   </div> 
-   <div class="row">
-       <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center">
             <button onclick="playAudio()" type="button" class="btn btn-light">Play</button>
             <button onclick="pauseAudio()" type="button" class="btn btn-light">Pause</button>
         </div>
     </div>
-   
-   <audio autoplay loop id="playAudio">
-       <source src="assets/sounds/09 The Mandalorian.mp3" type="audio/mpeg">
-   </audio> 
+    
+    <audio autoplay loop id="playAudio">
+        <source src="assets/sounds/09 The Mandalorian.mp3" type="audio/mpeg">
+    </audio> 
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
